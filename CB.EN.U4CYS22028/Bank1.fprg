@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="CB.EN.U4CYS22028"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-11-18 09:50:10 AM"/>
+        <attribute name="created" value="Q0IuRU4uVTRDWVMyMjAyODsyMDIyMjNNQVlDMDA2NTsyMDIyLTExLTE4OzA5OjAyOjU2IEFNOzMwNzA="/>
+        <attribute name="edited" value="Q0IuRU4uVTRDWVMyMjAyODsyMDIyMjNNQVlDMDA2NTsyMDIyLTExLTE4OzA5OjUwOjEwIEFNOzE7MzE3MQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Name" type="String" array="False" size=""/>
+            <output expression="&quot;Enter your name:&quot;" newline="True"/>
+            <input variable="Name"/>
+            <declare name="AccountNo" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter your account number:&quot;" newline="True"/>
+            <input variable="AccountNo"/>
+            <declare name="Pin" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the pin for your account:&quot;" newline="True"/>
+            <input variable="Pin"/>
+            <declare name="Balance" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter the balance amout left in your account:&quot;" newline="True"/>
+            <input variable="Balance"/>
+            <declare name="AccountNoinput" type="Integer" array="False" size=""/>
+            <output expression="&quot;Enter the account number of your account:&quot;" newline="True"/>
+            <input variable="AccountNoinput"/>
+            <if expression="AccountNo==AccountNoinput">
+                <then>
+                    <declare name="Pininput" type="Integer" array="False" size=""/>
+                    <output expression="&quot;Enter your pin:&quot;" newline="True"/>
+                    <input variable="Pininput"/>
+                    <if expression="Pin==Pininput">
+                        <then>
+                            <declare name="Amountneeded" type="Real" array="False" size=""/>
+                            <output expression="&quot;Enter the amount that you would like to withdraw:&quot;" newline="True"/>
+                            <input variable="Amountneeded"/>
+                            <if expression="Balance-Amountneeded&lt;0">
+                                <then>
+                                    <output expression="&quot;Insufficent balance&quot;" newline="True"/>
+                                    <breakpoint expression="" always="True"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <if expression="(Balance-Amountneeded)&gt;=500">
+                                <then>
+                                    <declare name="Balance1" type="Real" array="False" size=""/>
+                                    <assign variable="Balance1" expression="Balance-Amountneeded"/>
+                                    <output expression="&quot;The amount is withdrawn succesfully your remaining balance is:&quot;&amp;Balance1" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;If you withdraw&quot;&amp;Amountneeded&amp;&quot;Rs from your account your account balance will go below 500Rs and will lead additional penalty charges&quot;" newline="True"/>
+                                    <output expression="&quot;If you still want to continue enter 1 or else enter 0&quot;" newline="True"/>
+                                    <declare name="Flag" type="Integer" array="False" size=""/>
+                                    <if expression="Flag==1">
+                                        <then>
+                                            <declare name="Balance2" type="Real" array="False" size=""/>
+                                            <assign variable="Balance2" expression="Balance-Amountneeded"/>
+                                            <output expression="&quot;The amount is withdrawn succesfully the remaining amount left is:&quot;&amp;Balance2" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <output expression="&quot;Thank you&quot;" newline="True"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Incorrect pin&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Account not found please enter a valid account number&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
