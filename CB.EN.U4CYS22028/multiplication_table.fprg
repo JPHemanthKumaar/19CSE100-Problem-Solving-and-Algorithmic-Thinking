@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="cb.en.u4cys22028"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2022-12-02 09:36:56 AM"/>
+        <attribute name="created" value="Y2IuZW4udTRjeXMyMjAyODsyMDIyMjNNQVlDMDA2NTsyMDIyLTEyLTAyOzA5OjI4OjIwIEFNOzMzMTk="/>
+        <attribute name="edited" value="Y2IuZW4udTRjeXMyMjAyODsyMDIyMjNNQVlDMDA2NTsyMDIyLTEyLTAyOzA5OjM2OjU2IEFNOzM7MzQzNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="This program is to find multiplication table"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="j" type="Integer" array="False" size=""/>
+            <for variable="i" start="1" end="10" direction="inc" step="1">
+                <comment text="This is the outer loop which decides the which multiplication table"/>
+                <output expression="&quot;The multiplication table of &quot;&amp;i&amp;&quot; is:&quot;" newline="True"/>
+                <for variable="j" start="1" end="10" direction="inc" step="1">
+                    <comment text="This is the inner loop which decides until which number is multiplied in the table&#13;&#10;"/>
+                    <output expression="i&amp;&quot;*&quot;&amp;j&amp;&quot;=&quot;&amp;(i*j)" newline="True"/>
+                </for>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
